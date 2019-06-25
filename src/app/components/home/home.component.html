@@ -1,0 +1,81 @@
+<h3>引入图片</h3>
+<img src="assets/images/favicon.png" alt="">
+<img [src]="picUrl" alt="">
+<hr/>
+<h3>循环数据 显示数据的索引(key)</h3>
+<ul>
+  <li *ngFor="let item of list;let key=index">
+    {{item.title}}---{{key}}
+  </li>
+</ul>
+<hr/>
+<h3>条件判断语句 *ngif</h3>
+<div *ngIf="flag">
+  <img src="assets/images/favicon.png" alt="">
+</div>
+<div *ngIf="!flag">
+  <img [src]="picUrl" alt="">
+</div>
+<ul>
+  <li *ngFor="let item of list;let key=index">
+    <span *ngIf="key==1" class="red">{{item.title}}---{{key}}</span> 
+    <span *ngIf="key!=1">{{item.title}}---{{key}}</span> 
+  </li>
+</ul>
+<hr/>
+<h3>条件判断语句 *ngSwitch</h3>
+<span [ngSwitch]="orderStatus">
+<p *ngSwitchCase="1">
+  表示已经支付
+</p>
+<p *ngSwitchCase="2">
+  表示确认订单
+</p>
+<p *ngSwitchCase="3">
+  已经发货
+</p>
+<p *ngSwitchDefault>
+  无效订单
+</p>
+</span>
+<hr/>
+<h3>属性[ngclass]/[ngStyle]</h3>
+<p class="red">ngClass提示(尽量不要用dom改变class)</p>
+<p [ngClass]="{'orange':!flag,'blue':flag}">ngClass提示</p>
+<em>循环数组，让数组的第一个元素的样式为red</em>
+<li *ngFor="let item of list;let key=index" 
+    [ngClass]="{'red': key==1,'orange':key==2}"
+>{{key}}--{{item.title}}</li>
+
+<p [ngStyle]="{'color': 'blue'}">我是一个p标签</p>
+<p [ngStyle]="{'color': attr}">我是一个p标签</p>
+<hr>
+<h3>管道</h3>
+<p>{{tody | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+<h3>事件</h3>
+<button (click)="run()">执行事件</button>
+<button (click)="getDate()">执行事件获取数据</button>
+{{title}}
+<button (click)="handleChange()">执行方法修改数据</button>
+<button (click)="runEvent($event)">执行方法获取事件对象</button>
+<h3>表单事件 事件对象 </h3>
+keyDown
+<input type="text" (keydown)="keyDown($event)">
+keyUp
+<input type="text" (keydown)="keyUp($event)">
+<h3>双向数据绑定--mvvm</h3>
+<input type="text" [(ngModel)]="keywords" />
+{{keywords}}
+<button (click)="changeKeyWords()">改变keywords的值</button>
+<button (click)="getKeyWords()">获取keywords的值</button>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
