@@ -1,0 +1,16 @@
+<div class="search_warpper">
+    <div class="title">
+        <h3>搜索缓存数据功能</h3>
+        <div class="input_search">
+            <input type="text" [(ngModel)]="keyWord">
+            <button (click)="handleSearch()">搜索</button>
+        </div>
+    </div>
+    <hr>
+    <ul class="search_list">
+      <li class="search_tag" *ngFor="let item of historyList;let key=index">
+        {{item}} 
+        <button (click)="deleteHistory(key)">x</button>
+      </li>
+    </ul>
+</div>

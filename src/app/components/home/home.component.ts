@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
     dom.style.color="red"
   }
   keyDown(e) {
-    // console.log('keydown事件')
+    console.log('keydown事件')
     if(e.keyCode===13) {
       console.log('按了一下回车')
     }else {
@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
     }
   }
   keyUp(e) {
-    // console.log('keydown事件')
+    console.log('keyup事件')
     if(e.keyCode===13) {
       console.log(e.target.value)
       // console.log('按了一下回车')

@@ -1,0 +1,33 @@
+<div class="search_warpper">
+    <div class="title">
+        <h3>todoList</h3>
+        <div class="input_search">
+            <input type="text" [(ngModel)]="keyWord" (keydown)="handleAdd($event)">
+        </div>
+    </div>
+    <hr>
+    <h3>待办事项</h3>
+    <ul class="search_list">
+      <li class="search_tag" 
+      *ngFor="let item of todoList;let key=index"
+      [hidden]="item.status==1"
+      >
+        <input type="checkbox" [(ngModel)]="item.status">
+        {{item.title}} 
+        <button (click)="deleteHistory(key)">x</button>
+      </li>
+    </ul>
+    <h3>已完成事项</h3>
+    <ul class="search_list">
+        <li class="search_tag" 
+        *ngFor="let item of todoList;let key=index"
+        [hidden]="item.status==0"
+        >
+          <input type="checkbox" [(ngModel)]="item.status">
+          {{item.title}} 
+          <button (click)="deleteHistory(key)">x</button>
+        </li>
+      </ul>
+  <pre style="margin-top: 30px;">{{todoList | json}}</pre>
+
+</div>
