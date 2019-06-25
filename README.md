@@ -1,27 +1,129 @@
-# MyApp
+# 一、创建应用
+## 一、学习 Angular 必备基础 
+* 必备基础：html 、css 、js、es6 
+* 如果有 Typescript 基础更容易理解，没有 Typescript 基础也可以学此教程Typescript 语法会详细讲解。
+* Typescript 基础入门教程: [https://www.itying.com/goods-905.html](https://www.itying.com/goods-905.html)
+## 二、Angular 环境搭建
+1、安装前准备工作： 
+1. 安装 nodejs 安装 angular 的计算机上面必须安装最新的 nodejs--注意安装 nodejs 稳定版本 
+2. 安装 cnpm npm 可能安装失败建议先用 npm 安装一下 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
+   cnpm 用淘宝镜像安装 https://npm.taobao.org/
+`npm install -g cnpm --registry=https://registry.npm.taobao.org`
+2、使用 npm/cnpm 命令安装 angular/cli **（只需要安装一次）**
+`npm install -g @angular/cli`  或者  `cnpm install -g @angular/cli`
+## 三、创建项目
+#### 1. 打开命令行工具找到你要创建项目的目录 
+#### 2. 创建项目
+`ng new 项目名称`
+`ng new angulardemo`
+* 如果要跳过 npm i 安装：
+`ng new angulardemo --skip-install`
+#### 3. 运行项目
+`cd angulardemo` 
+`ng serve --open`
 
-## Development server
+## 四、项目结构
+* 项目文件介绍
+```json
+|-- e2e                            // 项目构建(webpack)相关代码
+|   |-- src                   
+|-- src                              // 源码目录*
+|   |-- app                          // 组件 以及app.module.ts定义模块*
+|   |-- assets                       // 静态资源
+|   |-- environments                 // 包含各个目标环境准备的文件
+|   |-- favicon.ico                  // vue的路由管理
+|   |-- index.html                   // 主页面*
+|   |-- polyfills.ts                 // 填充库(polyfills)帮我们把这些不同点标准化
+|   |-- styles.less                  // 这里是你的全局样式*
+|   |-- test.ts                      // 
+|-- .editorconfig                    // 定义代码格式
+|-- .gitignore                       // git上传需要忽略的文件格式
+|-- .angular.json                    // Angular-cli 配置文件
+|-- README.md                        // 项目说明
+|-- browserslist                      
+|-- package.json                     // 项目基本信息,包依赖信息等
+|-- karma.conf.js                    // 给karma的单元测试配置
+|-- tsconfig.app.json                 // 单元测试的主要入口点
+|-- tsconfig                          // TypeScript编译器的配置
+|-- tsconfig.spec.json                // TypeScript编译器的配置文件
+|-- tslint.json                       // 代码风格
+```
+## 五、app.module.ts、 组件分析
+#### 1. app.module.ts
+```ts
+/*这个文件是Angular 根模块，告诉angular如何组装应用 */
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+//BrowserModule，浏览器解析的模块
+import { BrowserModule } from '@angular/platform-browser';
+//Angular核心模块
+import { NgModule } from '@angular/core';
+//数据双向绑定模块
+import { FormsModule } from '@angular/forms';
+//路由模块
+import { AppRoutingModule } from './app-routing.module';
+//根组件
+import { AppComponent } from './app.component';
 
-## Code scaffolding
+/*@NgModule装饰器，@NgModule接受一个元数据对象，告诉Angular如何编译和启动应用*/
+@NgModule({
+  declarations: [ //配置当前项目运行的组件
+    AppComponent
+  ],
+  imports: [  //配置当前模块运行依赖的其他模块
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
+  providers: [],  //配置项目所需要的服务
+  bootstrap: [AppComponent] //指定应用的主视图(称为根组件) 通过引导根AppModule来启动应用
+})
+//根模块不需要导出任何东西， 因为其他组件不需要导入根模块，但是一定要写
+export class AppModule { }
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+#### 2. 自定义组件
+[https://cli.angular.io/](https://cli.angular.io/)
+* 创建组件： `ng g component components/header`
+* 组件内容详解：
+```ts
+import { Component, OnInit } from '@angular/core';  //引入angular核心
 
-## Build
+@Component({
+  selector: 'app-header',  //使用这个组件的名称
+  templateUrl: './header.component.html',  //html模板
+  styleUrls: ['./header.component.less']   //css模板
+})
+export class HeaderComponent implements OnInit {   //实现接口
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+  constructor() {  //构造函数
 
-## Running unit tests
+  }  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  ngOnInit() {  //初始化加载的生命周期函数
+  }
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+}
+```
+# 二、创建组件及模板
+## 一、创建组件
+* 创建组件
+`ng g component components/header`
+* 使用组件
+`<app-home></app-home>`
+## 二、数据绑定
+1. angular中使用{{}}绑定业务逻辑里面定义的数据
+```html
+  <h2>{{title}}</h2>
+```
+2. angular模板里面允许做简单的计算
+```html
+  <p>1+2={{1+2}}</p>
+```
+3. 模板里面绑定html
+```ts
+public content:any = '<h2>我是一个html标签，用[innerHtml]解析</h2>';
+```
+```html
+  <p [innerHtml]='content'></p>
+```
