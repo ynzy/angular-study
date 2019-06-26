@@ -30,7 +30,7 @@ export class NewsComponent implements OnInit {
   public content = '<h2>我是一个html标签</h2>';
   //定义数组
   public arr: any[] = ['111', '222', '333'];
-  public list: Array < string > = ['我是数组1', '我是数组2'];
+  public list: Array<string> = ['我是数组1', '我是数组2'];
   public userlist: any[] = [{
     username: '张三',
     age: 20
@@ -42,31 +42,31 @@ export class NewsComponent implements OnInit {
     age: 20
   }]
   public cars: any[] = [{
-      cate: '宝马',
-      list: [{
-        title: '宝马x1',
-        price: '30万'
-      }, {
-        title: '宝马x2',
-        price: '40万'
-      }, {
-        title: '宝马x3',
-        price: '50万'
-      }]
-    },
-    {
-      cate: '奥迪',
-      list: [{
-        title: '奥迪q1',
-        price: '50万'
-      }, {
-        title: '奥迪q2',
-        price: '60万'
-      }, {
-        title: '奥迪q3',
-        price: '70万'
-      }]
-    }
+    cate: '宝马',
+    list: [{
+      title: '宝马x1',
+      price: '30万'
+    }, {
+      title: '宝马x2',
+      price: '40万'
+    }, {
+      title: '宝马x3',
+      price: '50万'
+    }]
+  },
+  {
+    cate: '奥迪',
+    list: [{
+      title: '奥迪q1',
+      price: '50万'
+    }, {
+      title: '奥迪q2',
+      price: '60万'
+    }, {
+      title: '奥迪q3',
+      price: '70万'
+    }]
+  }
   ]
 
 
@@ -79,6 +79,6 @@ export class NewsComponent implements OnInit {
 
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }
