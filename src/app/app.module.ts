@@ -30,11 +30,13 @@ import { Header1Component } from './components/fatherSonComponents/header1/heade
 import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
 import { RxJSComponent } from './components/rx-js/rx-js.component';
 import { HttpsdemoComponent } from './components/httpsdemo/httpsdemo.component';
+import { ProductComponent } from './components/fatherSonComponents/product/product.component';
+import { MainComponent } from './components/fatherSonComponents/main/main.component';
 
 /*@NgModule装饰器，@NgModule接受一个元数据对象，告诉Angular如何编译和启动应用*/
 @NgModule({
   declarations: [ //配置当前项目运行的组件
-    AppComponent, NewsComponent, HeaderComponent, HomeComponent, FormComponent, SearchComponent, TodoListComponent, ViewChildComponent, TransitionComponent, Home1Component, Footer1Component, News1Component, Header1Component, LifecycleComponent, RxJSComponent, HttpsdemoComponent
+    AppComponent, NewsComponent, HeaderComponent, HomeComponent, FormComponent, SearchComponent, TodoListComponent, ViewChildComponent, TransitionComponent, Home1Component, Footer1Component, News1Component, Header1Component, LifecycleComponent, RxJSComponent, HttpsdemoComponent, ProductComponent, MainComponent
   ],
   imports: [  //配置当前模块运行依赖的其他模块
     BrowserModule,
