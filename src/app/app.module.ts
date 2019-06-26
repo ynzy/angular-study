@@ -23,11 +23,12 @@ import { Home1Component } from './components/fatherSonComponents/home1/home1.com
 import { Footer1Component } from './components/fatherSonComponents/footer1/footer1.component';
 import { News1Component } from './components/fatherSonComponents/news1/news1.component';
 import { Header1Component } from './components/fatherSonComponents/header1/header1.component';
+import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
 
 /*@NgModule装饰器，@NgModule接受一个元数据对象，告诉Angular如何编译和启动应用*/
 @NgModule({
   declarations: [ //配置当前项目运行的组件
-    AppComponent, NewsComponent, HeaderComponent, HomeComponent, FormComponent, SearchComponent, TodoListComponent, ViewChildComponent, TransitionComponent, Home1Component, Footer1Component, News1Component, Header1Component
+    AppComponent, NewsComponent, HeaderComponent, HomeComponent, FormComponent, SearchComponent, TodoListComponent, ViewChildComponent, TransitionComponent, Home1Component, Footer1Component, News1Component, Header1Component, LifecycleComponent
   ],
   imports: [  //配置当前模块运行依赖的其他模块
     BrowserModule,

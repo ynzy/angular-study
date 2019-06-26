@@ -11,6 +11,7 @@ export class News1Component implements OnInit {
 
   ngOnInit() {
   }
+  
   getChild() {
     // console.log(this.footer)
     // console.log(this.footer.msg)

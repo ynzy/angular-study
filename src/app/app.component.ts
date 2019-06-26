@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';   //定义属性
+  flag:boolean = true;
+  changeTitle() {
+    this.title='该改变title'
+  }
+  changeFlag() {
+    this.flag = !this.flag
+  }
 }
