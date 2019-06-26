@@ -7,6 +7,8 @@ import { Footer1Component } from './components/fatherSonComponents/footer1/foote
 import { News1Component } from './components/fatherSonComponents/news1/news1.component';
 import { Header1Component } from './components/fatherSonComponents/header1/header1.component';
 import { ProductComponent } from './components/fatherSonComponents/product/product.component';
+import { NewscontentComponent } from './components/fatherSonComponents/newscontent/newscontent.component';
+import { ProductconentComponent } from './components/fatherSonComponents/productconent/productconent.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,9 @@ const routes: Routes = [
       { path: 'product', component: ProductComponent },
     ]
   },
+  { path: 'newcontent/:aid', component: NewscontentComponent },
+  { path: 'productcontent/:pid', component: ProductconentComponent },
+
   //匹配不到路由的时候加载的组件 或者跳转的路由
   {
     path: '**', /*任意的路由*/

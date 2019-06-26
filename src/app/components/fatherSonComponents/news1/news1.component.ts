@@ -7,9 +7,14 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 })
 export class News1Component implements OnInit {
   @ViewChild('footer',{static:false}) footer:any;
+  public list:any[] = [];
   constructor() { }
 
   ngOnInit() {
+    for (let i = 0; i < 10; i++) {
+      this.list.push('这是第'+ i + '条数据')
+      
+    }
   }
   
   getChild() {

@@ -2,4 +2,18 @@
 <button (click)="getChild()">获取子组件的数据和方法</button>
 <hr>
 <br>
+<!-- <a [routerLink]="[ '/newcontent']">跳转新闻详情</a> -->
+<h2>get传值</h2>
+<!-- <ul>
+  <li *ngFor="let item of list;let key=index">
+    <a [routerLink]="[ '/newcontent']" [queryParams]="{aid:key}">{{key}}---{{item}}</a>
+  </li>
+</ul> -->
+<h2>动态路由</h2>
+<ul>
+  <li *ngFor="let item of list;let key=index">
+    <a [routerLink]="[ '/newcontent/', key]" >{{key}}---{{item}}</a>
+  </li>
+</ul>
+<br>
 <app-footer1 #footer (outer)="getSunMethod($event)"></app-footer1>
