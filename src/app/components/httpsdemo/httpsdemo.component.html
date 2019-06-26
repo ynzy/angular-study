@@ -1,0 +1,13 @@
+<p>httpsdemo works!</p>
+<button (click)="sendget()">get请求数据</button>
+<ul>
+  <li *ngFor="let item of list">
+    {{item.title}}
+  </li>
+</ul>
+<button (click)="submitPost()">post提交数据</button>
+<br>
+<button (click)="getJsonpData()">通过jsonp获取服务器数据(跨域)</button>
+<br>
+<button (click)="getAxiosData()">通过axios获取get数据</button>
+<button (click)="postAxiosData()">通过axios提交post数据</button>

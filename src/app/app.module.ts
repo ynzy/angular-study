@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule,HttpClientJsonpModule} from '@angular/common/http';
 //根组件
 import { AppComponent } from './app.component';
 import { NewsComponent } from './components/news/news.component';
@@ -18,6 +19,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 //引入并且配置服务
 import { StorageService } from "./services/storage.service";
 import { RequestService } from "./services/request/request.service";
+import { HttpaxiosService } from "./services/httpAxios/httpaxios.service";
 
 import { ViewChildComponent } from './components/view-child/view-child.component';
 import { TransitionComponent } from './components/transition/transition.component';
@@ -27,18 +29,21 @@ import { News1Component } from './components/fatherSonComponents/news1/news1.com
 import { Header1Component } from './components/fatherSonComponents/header1/header1.component';
 import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
 import { RxJSComponent } from './components/rx-js/rx-js.component';
+import { HttpsdemoComponent } from './components/httpsdemo/httpsdemo.component';
 
 /*@NgModule装饰器，@NgModule接受一个元数据对象，告诉Angular如何编译和启动应用*/
 @NgModule({
   declarations: [ //配置当前项目运行的组件
-    AppComponent, NewsComponent, HeaderComponent, HomeComponent, FormComponent, SearchComponent, TodoListComponent, ViewChildComponent, TransitionComponent, Home1Component, Footer1Component, News1Component, Header1Component, LifecycleComponent, RxJSComponent
+    AppComponent, NewsComponent, HeaderComponent, HomeComponent, FormComponent, SearchComponent, TodoListComponent, ViewChildComponent, TransitionComponent, Home1Component, Footer1Component, News1Component, Header1Component, LifecycleComponent, RxJSComponent, HttpsdemoComponent
   ],
   imports: [  //配置当前模块运行依赖的其他模块
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
-  providers: [StorageService,RequestService],  //配置项目所需要的服务
+  providers: [StorageService,RequestService,HttpaxiosService],  //配置项目所需要的服务
   bootstrap: [AppComponent] //指定应用的主视图(称为根组件) 通过引导根AppModule来启动应用
 })
 //根模块不需要导出任何东西， 因为其他组件不需要导入根模块
