@@ -14,4 +14,11 @@
 <button (click)="changeFlag()">挂载销毁组件</button> -->
 <!-- <app-rx-js></app-rx-js> -->
 <!-- <app-httpsdemo></app-httpsdemo> -->
+<h2>嵌套路由</h2>
+<header>
+  <div class="link">
+    <a [routerLink]="[ '/nestehome' ]" routerLinkActive="active">首页</a>
+    <a routerLink="/nesteproduct" routerLinkActive="active">商品</a>
+  </div>
+</header>
 <router-outlet></router-outlet>

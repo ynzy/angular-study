@@ -1,14 +1,14 @@
 /*
 ViewChild获取dom节点
-1.模板中给dom起一个名字
+1. 模板中给dom起一个名字
   <div #myBox>
   测试viewChild
   </div>
-2.在业务逻辑里面引入ViewChild
+2. 在业务逻辑里面引入ViewChild
   import { Component, OnInit,ViewChild } from '@angular/core';
-3.写在类里面
+3. 写在类里面
   @ViewChild('myBox',{static:false}) myBox:any;
-4.ngAfterViewInit生命周期中获取dom
+4. ngAfterViewInit生命周期中获取dom
   console.log(this.myBox.nativeElement)
   mybox.style.background='red'
  */
@@ -29,13 +29,10 @@ export class ViewChildComponent implements OnInit {
   ngOnInit() {
   }
   ngAfterViewInit(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
     // console.log(this.myBox.nativeElement)
     var mybox:any = this.myBox.nativeElement
     mybox.style.color='#000'
     mybox.style.background='red'
-    
   }
   getrun() {
     this.header.run()

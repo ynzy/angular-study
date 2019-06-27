@@ -34,11 +34,18 @@ import { ProductComponent } from './components/fatherSonComponents/product/produ
 import { MainComponent } from './components/fatherSonComponents/main/main.component';
 import { NewscontentComponent } from './components/fatherSonComponents/newscontent/newscontent.component';
 import { ProductconentComponent } from './components/fatherSonComponents/productconent/productconent.component';
+ 
+import { NesteHomeComponent } from './components/Nestedrouting/neste-home/neste-home.component';
+import { NesteproductComponent } from './components/Nestedrouting/nesteproduct/nesteproduct.component';
+import { HomeWelcomeComponent } from './components/Nestedrouting/neste-home/home-welcome/home-welcome.component';
+import { HomeSettingComponent } from './components/Nestedrouting/neste-home/home-setting/home-setting.component';
+import { ProductPcateComponent } from './components/Nestedrouting/nesteproduct/product-pcate/product-pcate.component';
+import { ProductPlistComponent } from './components/Nestedrouting/nesteproduct/product-plist/product-plist.component';
 
 /*@NgModule装饰器，@NgModule接受一个元数据对象，告诉Angular如何编译和启动应用*/
 @NgModule({
   declarations: [ //配置当前项目运行的组件
-    AppComponent, NewsComponent, HeaderComponent, HomeComponent, FormComponent, SearchComponent, TodoListComponent, ViewChildComponent, TransitionComponent, Home1Component, Footer1Component, News1Component, Header1Component, LifecycleComponent, RxJSComponent, HttpsdemoComponent, ProductComponent, MainComponent, NewscontentComponent, ProductconentComponent
+    AppComponent, NewsComponent, HeaderComponent, HomeComponent, FormComponent, SearchComponent, TodoListComponent, ViewChildComponent, TransitionComponent, Home1Component, Footer1Component, News1Component, Header1Component, LifecycleComponent, RxJSComponent, HttpsdemoComponent, ProductComponent, MainComponent, NewscontentComponent, ProductconentComponent, NesteHomeComponent, NesteproductComponent, HomeWelcomeComponent, HomeSettingComponent, ProductPcateComponent, ProductPlistComponent
   ],
   imports: [  //配置当前模块运行依赖的其他模块
     BrowserModule,
