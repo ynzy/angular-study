@@ -9,6 +9,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { PconentComponent } from './components/pconent/pconent.component';
 
+//上百个组件，会导致页面加载比较缓慢  所以要模块化
+//引入自定义模块
+import { UserModule } from './modules/user/user.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +22,8 @@ import { PconentComponent } from './components/pconent/pconent.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    UserModule
   ],
   providers: [HttpClinetService],
   bootstrap: [AppComponent]
