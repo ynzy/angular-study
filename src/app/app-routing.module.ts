@@ -8,6 +8,7 @@ import { UserlistComponent } from './user/userlist/userlist.component';
 import { VipComponent } from './user/vip/vip.component';
 import { AdduserComponent } from './user/adduser/adduser.component';
 import { EdituserComponent } from './user/edituser/edituser.component';
+import { AjaxlistComponent } from './user/ajaxlist/ajaxlist.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
     component: UserComponent,
     children: [
       { path: 'list', component: UserlistComponent },
+      { path: 'ajaxlist', component: AjaxlistComponent },
       { path: 'vip', component: VipComponent },
       { path: 'add', component: AdduserComponent },
       { path: 'edit', component: EdituserComponent },

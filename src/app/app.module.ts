@@ -15,6 +15,7 @@ import { VipComponent } from './user/vip/vip.component';
 import { AdduserComponent } from './user/adduser/adduser.component';
 import { EdituserComponent } from './user/edituser/edituser.component';
 import { HomeComponent } from './home/home.component';
+import { AjaxlistComponent } from './user/ajaxlist/ajaxlist.component';
 
 
 registerLocaleData(zh);
@@ -27,7 +28,8 @@ registerLocaleData(zh);
     AdduserComponent,
     EdituserComponent,
     UserComponent,
-    HomeComponent
+    HomeComponent,
+    AjaxlistComponent
   ],
   imports: [
     BrowserModule,
