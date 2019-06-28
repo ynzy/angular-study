@@ -23,7 +23,9 @@
     <li>日期：
         <nz-date-picker [(ngModel)]="inputData.date" (ngModelChange)="onChange($event)"></nz-date-picker>
     </li>
-    <li>日期：</li>
+    <li>
+        <!-- <quill-editor [(ngModel)]="inputData.content"></quill-editor> -->
+    </li>
   </ul>
   <button nz-button nzType="primary" (click)="handleSubmit()">提交</button>
   <div><pre>{{inputData | json}}</pre></div>

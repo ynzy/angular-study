@@ -51,14 +51,13 @@ export class UserlistComponent implements OnInit {
       如果有一个元素满足条件，则表达式返回true , 剩余的元素不会再执行检测。
       如果没有满足条件的元素，则返回false。
     */
-    this.isAllDisplayDataChecked = this.listOfDisplayData.every((item) => {
+    this.isAllDisplayDataChecked = this.listOfDisplayData.every(item =>
       this.mapOfCheckedId[item.id]
-    });
+    );
     this.isIndeterminate =
-      this.listOfDisplayData.some((item) => { 
-        // console.log(this.mapOfCheckedId[item.id])
-        this.mapOfCheckedId[item.id] 
-      }) && !this.isAllDisplayDataChecked;
+      this.listOfDisplayData.some(item =>
+        this.mapOfCheckedId[item.id]
+      ) && !this.isAllDisplayDataChecked;
   }
   //全选和反选
   checkAll(value: boolean): void {

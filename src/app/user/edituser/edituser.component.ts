@@ -23,7 +23,8 @@ export class EdituserComponent implements OnInit {
       { label: 'h5', value: 'h5'  }
     ],
     vipcheckedOption:this.options[0],
-    date:''
+    date:'',
+    content: ''
   }
   constructor() { }
 
