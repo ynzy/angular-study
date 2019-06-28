@@ -9,12 +9,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
+import { UserComponent } from './user/user.component';
+import { UserlistComponent } from './user/userlist/userlist.component';
+import { VipComponent } from './user/vip/vip.component';
+import { AdduserComponent } from './user/adduser/adduser.component';
+import { EdituserComponent } from './user/edituser/edituser.component';
+import { HomeComponent } from './home/home.component';
+
 
 registerLocaleData(zh);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserlistComponent,
+    VipComponent,
+    AdduserComponent,
+    EdituserComponent,
+    UserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

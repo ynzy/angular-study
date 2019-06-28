@@ -1,56 +1,68 @@
-<nz-layout class="layout">
-  <!-- 头部 -->
-  <nz-header>
-    <div class="logo"></div>
-    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
-      <li nz-menu-item>nav 1</li>
-      <li nz-menu-item>nav 2</li>
-      <li nz-menu-item>nav 3</li>
+<nz-layout>
+  <!-- 侧边栏 -->
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
+    <div class="logo">
+      <a [routerLink]="[ '/home' ]">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="">
+        <span>后台管理系统</span>
+      </a>
+    </div>
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu>
+        <span title><i nz-icon type="user"></i><span class="nav-text">用户管理</span></span>
+        <ul>
+          <li nz-menu-item>
+            <a [routerLink]="[ '/user/list' ]" routerLinkActive="active">用户列表</a>
+          </li>
+          <li nz-menu-item>
+              <a [routerLink]="[ '/user/vip' ]" routerLinkActive="active">Vip用户</a>            
+            </li>
+        </ul>
+      </li>
+      <li nz-submenu>
+        <span title><i nz-icon type="team"></i><span class="nav-text">Team</span></span>
+        <ul>
+          <li nz-menu-item>Team 1</li>
+          <li nz-menu-item>Team 2</li>
+        </ul>
+      </li>
+      <li nz-menu-item>
+        <span><i nz-icon type="file"></i><span class="nav-text">File</span></span>
+      </li>
     </ul>
-  </nz-header>
-
+  </nz-sider>
   <nz-layout>
-     <!-- 侧边栏 -->
-    <nz-sider [nzWidth]="200" style="background:#fff">
-      <ul nz-menu [nzMode]="'inline'" style="height:100%">
-        <li nz-submenu>
-          <span title><i nz-icon type="user"></i>subnav 1</span>
-          <ul>
-            <li nz-menu-item>option1</li>
-            <li nz-menu-item>option2</li>
-            <li nz-menu-item>option3</li>
-            <li nz-menu-item>option4</li>
-          </ul>
-        </li>
-        <li nz-submenu>
-          <span title><i nz-icon type="laptop"></i>subnav 2</span>
-          <ul>
-            <li nz-menu-item>option5</li>
-            <li nz-menu-item>option6</li>
-            <li nz-menu-item>option7</li>
-            <li nz-menu-item>option8</li>
-          </ul>
-        </li>
-        <li nz-submenu>
-          <span title><i nz-icon type="notification"></i>subnav 3</span>
-          <ul>
-            <li nz-menu-item>option9</li>
-            <li nz-menu-item>option10</li>
-            <li nz-menu-item>option11</li>
-            <li nz-menu-item>option12</li>
-          </ul>
-        </li>
-      </ul>
-    </nz-sider>
-    <nz-layout style="padding:0 24px 24px">
-      <!-- 导航 -->
+    <!-- 头部区域 -->
+    <nz-header style="background: #fff; padding:0;">
+      <i class="trigger" nz-icon [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"></i>
+        <nz-dropdown class="header_menu">
+            <a nz-dropdown>管理员<i nz-icon type="down"></i> </a>
+            <ul nz-menu nzSelectable>
+              <li nz-menu-item>
+                <a>退出</a>
+              </li>
+              <li nz-menu-item>
+                <a>Github</a>
+              </li>
+            </ul>
+          </nz-dropdown>
+    </nz-header>
+    <!-- 内容区域 -->
+    <nz-content style="margin:0 16px;">
       <nz-breadcrumb style="margin:16px 0;">
-        <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-        <nz-breadcrumb-item>List</nz-breadcrumb-item>
-        <nz-breadcrumb-item>App</nz-breadcrumb-item>
+        <!-- 历史导航 -->
+        <nz-breadcrumb-item>User</nz-breadcrumb-item>
+        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
       </nz-breadcrumb>
-      <!-- 内容区域 -->
-      <nz-content style="background:#fff; padding: 24px; min-height: 280px;">Content</nz-content>
-    </nz-layout>
+      <!-- 右侧内容区域 -->
+      <div style="padding:24px; background: #fff; min-height: 360px;">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer style="text-align: center;">Ant Design ©2019 Implement By Angular</nz-footer>
   </nz-layout>
 </nz-layout>
+<ng-template #trigger>
+  <i nz-icon type="up"></i>
+</ng-template>

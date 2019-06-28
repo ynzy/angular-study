@@ -1,7 +1,38 @@
+// .ant-layout {
+//   height: 100%;
+// }
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
 .logo {
-  width: 120px;
-  height: 31px;
+  // display: flex;
+  // align-items: center;
+  height: 40px;
+  line-height: 40px;
   background: rgba(255, 255, 255, 0.2);
-  margin: 16px 28px 16px 0;
-  float: left;
+  margin: 16px;
+  overflow: hidden;
+  img {
+    float: left;
+    height: 40px;
+    margin: 0 10px;
+  }
+  span {
+    font-size: 18px;
+    color: #fff;
+  }
+}
+// 头部
+.header_menu {
+  float: right;
+  margin-right: 20px;
 }
