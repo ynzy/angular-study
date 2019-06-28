@@ -24,7 +24,48 @@
         <nz-date-picker [(ngModel)]="inputData.date" (ngModelChange)="onChange($event)"></nz-date-picker>
     </li>
     <li>
-        <!-- <quill-editor [(ngModel)]="inputData.content"></quill-editor> -->
+        <quill-editor [(ngModel)]="inputData.content">
+          <div quill-editor-toolbar>
+            <span class="ql-formats">
+              <select class="ql-font">
+                <option value="aref">Aref Ruqaa</option>
+                <option value="mirza">Mirza</option>
+                <option selected>Roboto</option>
+              </select>
+              <select class="ql-align" [title]="'Aligment'">
+                <option selected></option>
+                <option value="center"></option>
+                <option value="right"></option>
+                <option value="justify"></option>
+              </select>
+              <select class="ql-align" [title]="'Aligment2'">
+                <option selected></option>
+                <option value="center"></option>
+                <option value="right"></option>
+                <option value="justify"></option>
+              </select>
+            </span>
+            <span class="ql-formats">
+              <div id="counter"></div>
+            </span>
+
+            <span class="ql-formats">
+
+              <button type="button" class="ql-header" value="1"></button>
+            </span>
+
+            <span class="ql-formats">
+
+              <button type="button" class="ql-header" value="2"></button>
+            </span>
+
+            <span title="超链接" class="ql-formats">
+              <button type="button" class="ql-link"></button>
+            </span>
+
+           
+          </div>
+        </quill-editor>
     </li>
   </ul>
   <button nz-button nzType="primary" (click)="handleSubmit()">提交</button>
