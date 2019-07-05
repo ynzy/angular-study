@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "zy": {
+    "zy-packages": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/zy",
+            "outputPath": "dist/zy-packages",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "zy:build"
+            "browserTarget": "zy-packages:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "zy:build:production"
+              "browserTarget": "zy-packages:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "zy:build"
+            "browserTarget": "zy-packages:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "zy:serve"
+            "devServerTarget": "zy-packages:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "zy:serve:production"
+              "devServerTarget": "zy-packages:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "zy"
+  "defaultProject": "zy-packages"
 }
