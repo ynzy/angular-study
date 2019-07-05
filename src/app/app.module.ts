@@ -1,12 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ZyModule } from "zy";
+import { ZyModule } from "ynzy";
+import { DataService } from "ynzy";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DataComponent } from './components/data/data.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
@@ -15,7 +19,7 @@ import { AppComponent } from './app.component';
       dataUrl: `https://jsonplaceholder.typicode.com/todos/1`
     })
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
