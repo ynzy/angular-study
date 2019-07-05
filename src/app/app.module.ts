@@ -11,7 +11,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ZyModule
+    ZyModule.forRoot({
+      dataUrl: `https://jsonplaceholder.typicode.com/todos/1`
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
