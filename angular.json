@@ -119,6 +119,41 @@
           }
         }
       }
+    },
+    "zy": {
+      "projectType": "library",
+      "root": "projects/zy",
+      "sourceRoot": "projects/zy/src",
+      "prefix": "zy",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/zy/tsconfig.lib.json",
+            "project": "projects/zy/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/zy/src/test.ts",
+            "tsConfig": "projects/zy/tsconfig.spec.json",
+            "karmaConfig": "projects/zy/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/zy/tsconfig.lib.json",
+              "projects/zy/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "zy-packages"
 }
