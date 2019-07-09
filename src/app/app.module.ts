@@ -6,11 +6,13 @@ import { YufanModule } from "yufan";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataComponent } from './components/data/data.component';
+import { SizerComponent } from './components/sizer/sizer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataComponent
+    DataComponent,
+    SizerComponent
   ],
   imports: [
     BrowserModule,

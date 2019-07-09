@@ -7,6 +7,7 @@ import { Component,ViewChild } from '@angular/core';
 })
 export class AppComponent {
   title = 'zy-packages';
+  fontSizePx:number = 13;
   @ViewChild('header',{static:false}) header
   handleLdft(e) {
     console.log(e)

@@ -4,6 +4,7 @@
   <!-- <app-data></app-data> -->
   <zy-header #header [title]="title" (left)="handleLdft($event)"></zy-header>
 </div>
-
-
+<app-sizer [(size)]="fontSizePx"></app-sizer>
+<div [style.font-size.px]="fontSizePx">字体大小改变{{fontSizePx}}px</div>
+<app-sizer [size]="fontSizePx" (sizeChange)="fontSizePx=$event"></app-sizer>
 <router-outlet></router-outlet>
