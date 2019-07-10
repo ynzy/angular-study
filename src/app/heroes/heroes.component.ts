@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 @Component({
@@ -8,6 +8,7 @@ import { HeroService } from '../hero.service';
 })
 export class HeroesComponent implements OnInit {
   heroes:Hero[];
+  @ViewChild('heroName',{static:false})heroName:any
   constructor(private heroService:HeroService) { }
 
   ngOnInit() {
@@ -25,6 +26,7 @@ export class HeroesComponent implements OnInit {
       .subscribe(hero => {
         this.heroes.push(hero);
       });
+    
   }
   
   delete(hero: Hero): void {
