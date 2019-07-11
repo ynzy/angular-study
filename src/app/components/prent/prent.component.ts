@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AdItem } from '../ad-banner/ad-item';
+import { AdService } from 'src/app/services/ad.service';
 
 @Component({
   selector: 'app-prent',
@@ -34,9 +36,12 @@ export class PrentComponent implements OnInit {
     this.tiemr.stop()
   }
   
-  constructor() { }
+  ads:AdItem[];
+
+  constructor(private adService:AdService) { }
 
   ngOnInit() {
+    this.ads = this.adService.getAds();
   }
 
   ngAfterViewInit(): void {

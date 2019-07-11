@@ -19,6 +19,11 @@ import { VoterChildComponent } from './components/voter-child/voter-child.compon
 import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer.component';
 import { MissioncontrolComponent } from './components/missioncontrol/missioncontrol.component';
 import { AstoronautComponent } from './components/astoronaut/astoronaut.component';
+import { AdDirective } from './directives/ad.directive';
+import { AdBannerComponent } from './components/ad-banner/ad-banner.component';
+import { HeroJobAdComponent } from './components/hero-job-ad/hero-job-ad.component';
+import { HeroProfileComponent } from './components/hero-profile/hero-profile.component';
+import { AdService } from './services/ad.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,11 @@ import { AstoronautComponent } from './components/astoronaut/astoronaut.componen
     VoterChildComponent,
     CountdownTimerComponent,
     MissioncontrolComponent,
-    AstoronautComponent
+    AstoronautComponent,
+    AdDirective,
+    AdBannerComponent,
+    HeroJobAdComponent,
+    HeroProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +55,8 @@ import { AstoronautComponent } from './components/astoronaut/astoronaut.componen
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [],
+  providers: [AdService],
+  entryComponents: [HeroJobAdComponent,HeroProfileComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
