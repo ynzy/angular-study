@@ -40,6 +40,9 @@ export class PrentComponent implements OnInit {
 
   constructor(private adService:AdService) { }
 
+  color = 'yellow'
+  violet = ""
+
   ngOnInit() {
     this.ads = this.adService.getAds();
   }

@@ -1,32 +1,44 @@
 <h3>父组件</h3>
-<app-name-child *ngFor="let name of names" [name]='name'></app-name-child>
+<!-- <app-name-child *ngFor="let name of names" [name]='name'></app-name-child> -->
 <div>
-  <h6>onchange周期观察数据改变</h6>
+  <!-- <h6>onchange周期观察数据改变</h6>
   <button (click)="newMinor()">新的minor</button>
   <button (click)="newMajor()">新的major</button>
-  <app-version-child [major]="major" [minor]="minor"></app-version-child>
+  <app-version-child [major]="major" [minor]="minor"></app-version-child> -->
 </div>
 <div>
-  <h6>(output发送事件)是否同意?</h6>
+  <!-- <h6>(output发送事件)是否同意?</h6>
   <h6>同意次数:{{agreed}},不同意次数:{{disagreed}}</h6>
   <app-voter-child *ngFor="let voter of voters" [name]="voter"
   (voted)="onVoted($event)"
-  ></app-voter-child>
+  ></app-voter-child> -->
 </div>
 <div>
-  <h4>倒计时发射:父组件与子组件通过本地变量互动</h4>
+  <!-- <h4>倒计时发射:父组件与子组件通过本地变量互动</h4> -->
   <!-- <button (click)="timer.start()">开始</button>
   <button (click)="timer.stop()">停止</button>
   <p class="seconds">{{timer.seconds}}</p>
   <app-countdown-timer #timer></app-countdown-timer> -->
-  <button (click)="start()">开始</button>
+
+  <!-- <button (click)="start()">开始</button>
   <button (click)="stop()">停止</button>
   <p class="seconds">{{seconds()}}</p>
-  <app-countdown-timer #timer></app-countdown-timer>
+  <app-countdown-timer #timer></app-countdown-timer> -->
+</div>
+
+<div>
+  <!-- <app-missioncontrol></app-missioncontrol> -->
+</div>
+
+<div>
+  <!-- <h4>动态组件</h4> -->
+  <!-- <app-ad-banner [ads]="ads"></app-ad-banner> -->
 </div>
 <div>
-  <app-missioncontrol></app-missioncontrol>
-</div>
-<div>
-  <app-ad-banner [ads]="ads"></app-ad-banner>
+  <h4>属性型指令</h4>
+  <input type="radio" name="colors" (click)="color='green'">green
+  <input type="radio" name="colors" (click)="color='pink'">pink
+  <input type="radio" name="colors" (click)="color='cyan'">cyan
+  <!-- <p appHighlight highlightColor='yellow'>鼠标移入,高亮我!</p> -->
+  <p [appHighlight]="color" defaultColor="violet">鼠标移入,高亮我!</p>
 </div>
