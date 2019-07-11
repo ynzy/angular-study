@@ -25,6 +25,7 @@ import { HeroJobAdComponent } from './components/hero-job-ad/hero-job-ad.compone
 import { HeroProfileComponent } from './components/hero-profile/hero-profile.component';
 import { AdService } from './services/ad.service';
 import { HighlightDirective } from './directives/highlight/highlight.directive';
+import { UnlessDirective } from './directives/unless/unless.directive';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { HighlightDirective } from './directives/highlight/highlight.directive';
     HeroJobAdComponent,
     HeroProfileComponent,
     HighlightDirective,
+    UnlessDirective,
   ],
   imports: [
     BrowserModule,

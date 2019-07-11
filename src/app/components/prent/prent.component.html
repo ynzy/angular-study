@@ -42,3 +42,18 @@
   <!-- <p appHighlight highlightColor='yellow'>鼠标移入,高亮我!</p> -->
   <p [appHighlight]="color" defaultColor="violet">鼠标移入,高亮我!</p>
 </div>
+<div>
+  <h4>结构型指令</h4>
+  <button (click)="condition = !condition">
+    选择状态 {{condition}}
+  </button>
+  <p *appUnless="condition" class="unless a">
+    (A) 
+    当前condition状态是false所以显示
+  </p>
+
+  <p *appUnless="!condition" class="unless b">
+    (B) 
+    当前condition状态改为true,所以显示
+  </p>
+</div>
