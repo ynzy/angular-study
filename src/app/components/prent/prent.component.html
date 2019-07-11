@@ -1,0 +1,29 @@
+<h3>父组件</h3>
+<app-name-child *ngFor="let name of names" [name]='name'></app-name-child>
+<div>
+  <h6>onchange周期观察数据改变</h6>
+  <button (click)="newMinor()">新的minor</button>
+  <button (click)="newMajor()">新的major</button>
+  <app-version-child [major]="major" [minor]="minor"></app-version-child>
+</div>
+<div>
+  <h6>(output发送事件)是否同意?</h6>
+  <h6>同意次数:{{agreed}},不同意次数:{{disagreed}}</h6>
+  <app-voter-child *ngFor="let voter of voters" [name]="voter"
+  (voted)="onVoted($event)"
+  ></app-voter-child>
+</div>
+<div>
+  <h4>倒计时发射:父组件与子组件通过本地变量互动</h4>
+  <!-- <button (click)="timer.start()">开始</button>
+  <button (click)="timer.stop()">停止</button>
+  <p class="seconds">{{timer.seconds}}</p>
+  <app-countdown-timer #timer></app-countdown-timer> -->
+  <button (click)="start()">开始</button>
+  <button (click)="stop()">停止</button>
+  <p class="seconds">{{seconds()}}</p>
+  <app-countdown-timer #timer></app-countdown-timer>
+</div>
+<div>
+  <app-missioncontrol></app-missioncontrol>
+</div>

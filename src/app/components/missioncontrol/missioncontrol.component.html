@@ -1,0 +1,10 @@
+<h4>消息的控制</h4>
+<button (click)="announce()">发布消息</button>
+<app-astoronaut *ngFor="let astronaut of astronauts"
+  [astronaut]="astronaut"
+>
+</app-astoronaut>
+<h5>历史</h5>
+<ul>
+  <li *ngFor="let item of history">{{item}}</li>
+</ul>

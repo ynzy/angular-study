@@ -12,6 +12,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { NameChildComponent } from './components/name-child/name-child.component';
+import { PrentComponent } from './components/prent/prent.component';
+import { VersionChildComponent } from './components/version-child/version-child.component';
+import { VoterChildComponent } from './components/voter-child/voter-child.component';
+import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer.component';
+import { MissioncontrolComponent } from './components/missioncontrol/missioncontrol.component';
+import { AstoronautComponent } from './components/astoronaut/astoronaut.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +27,14 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    NameChildComponent,
+    PrentComponent,
+    VersionChildComponent,
+    VoterChildComponent,
+    CountdownTimerComponent,
+    MissioncontrolComponent,
+    AstoronautComponent
   ],
   imports: [
     BrowserModule,
