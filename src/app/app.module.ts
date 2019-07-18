@@ -19,7 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { AjaxlistComponent } from './user/ajaxlist/ajaxlist.component';
 import { CropperComponent } from './item/cropper/cropper.component';
 import { ItemComponent } from './item/item.component';
-
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 registerLocaleData(zh);
 
@@ -35,6 +35,7 @@ registerLocaleData(zh);
     AjaxlistComponent,
     CropperComponent,
     ItemComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,8 @@ registerLocaleData(zh);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    QuillModule.forRoot()
+    QuillModule.forRoot(),
+    ImageCropperModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
