@@ -23,9 +23,11 @@
         </ul>
       </li>
       <li nz-submenu>
-        <span title><i nz-icon type="team"></i><span class="nav-text">Team</span></span>
+        <span title><i nz-icon type="team"></i><span class="nav-text">Item</span></span>
         <ul>
-          <li nz-menu-item>Team 1</li>
+          <li nz-menu-item>
+            <a [routerLink]="[ '/item/cropper' ]" routerLinkActive="active">裁剪图片</a>
+          </li>
           <li nz-menu-item>Team 2</li>
         </ul>
       </li>

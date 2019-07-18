@@ -9,6 +9,8 @@ import { VipComponent } from './user/vip/vip.component';
 import { AdduserComponent } from './user/adduser/adduser.component';
 import { EdituserComponent } from './user/edituser/edituser.component';
 import { AjaxlistComponent } from './user/ajaxlist/ajaxlist.component';
+import { CropperComponent } from './item/cropper/cropper.component';
+import { ItemComponent } from './item/item.component';
 
 
 const routes: Routes = [
@@ -26,6 +28,13 @@ const routes: Routes = [
       { path: 'add', component: AdduserComponent },
       { path: 'edit', component: EdituserComponent },
       { path: '**', redirectTo: 'list'}
+    ]
+  },{
+    path: 'item',
+    component: ItemComponent,
+    children: [
+      { path: 'cropper', component: CropperComponent },
+      
     ]
   },
   {

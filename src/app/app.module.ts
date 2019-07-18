@@ -17,6 +17,8 @@ import { AdduserComponent } from './user/adduser/adduser.component';
 import { EdituserComponent } from './user/edituser/edituser.component';
 import { HomeComponent } from './home/home.component';
 import { AjaxlistComponent } from './user/ajaxlist/ajaxlist.component';
+import { CropperComponent } from './item/cropper/cropper.component';
+import { ItemComponent } from './item/item.component';
 
 
 registerLocaleData(zh);
@@ -30,7 +32,9 @@ registerLocaleData(zh);
     EdituserComponent,
     UserComponent,
     HomeComponent,
-    AjaxlistComponent
+    AjaxlistComponent,
+    CropperComponent,
+    ItemComponent,
   ],
   imports: [
     BrowserModule,
