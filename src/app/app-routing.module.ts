@@ -11,6 +11,7 @@ import { EdituserComponent } from './user/edituser/edituser.component';
 import { AjaxlistComponent } from './user/ajaxlist/ajaxlist.component';
 import { CropperComponent } from './item/cropper/cropper.component';
 import { ItemComponent } from './item/item.component';
+import { FormValidateComponent } from './item/form-validate/form-validate.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
     component: ItemComponent,
     children: [
       { path: 'cropper', component: CropperComponent },
+      { path: 'form', component: FormValidateComponent },
       
     ]
   },

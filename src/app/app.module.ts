@@ -20,6 +20,7 @@ import { AjaxlistComponent } from './user/ajaxlist/ajaxlist.component';
 import { CropperComponent } from './item/cropper/cropper.component';
 import { ItemComponent } from './item/item.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { FormValidateComponent } from './item/form-validate/form-validate.component';
 
 registerLocaleData(zh);
 
@@ -35,6 +36,7 @@ registerLocaleData(zh);
     AjaxlistComponent,
     CropperComponent,
     ItemComponent,
+    FormValidateComponent,
     
   ],
   imports: [
